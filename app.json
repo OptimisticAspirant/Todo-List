@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/tomatoClock/tomatoClock"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#222",
+    "backgroundColor": "#f8f9fb",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Todo List",
+        "iconPath": "photos/list.png",
+        "selectedIconPath": "photos/greenList.png"
+      },
+      {
+        "pagePath": "pages/tomatoClock/tomatoClock",
+        "text": "Tomato Clock",
+        "iconPath": "photos/tomatoClock.png",
+        "selectedIconPath": "photos/redTomato.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "logs",
+        "iconPath": "photos/history.png",
+        "selectedIconPath": "photos/blueHistory.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
