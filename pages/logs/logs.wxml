@@ -1,6 +1,24 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container">
+  <button style="width:60vw" bindtap="switchModal" class="clear">
+    <image class="btnImg" src="../../photos/clear.png"/>
+    Clear History
+  </button>
+  <modal 
+    title="Tips" 
+    confirm-text="Confirm" 
+    cancel-text="Cancel" 
+    hidden="{{modalHidden}}" 
+    bindconfirm="clearLog" 
+    bindcancel="switchModal">
+    Whether to clear the record or not. This operation is not recoverable!
+  </modal>
+  <toast hidden="{{toastHidden}}" bindchange="hideToast">Clear successfully！</toast>
+  <view class="logs" wx:if="{{ logs.length }}">
+    <view class="item" wx:for="{{ logs }}" wx:key="{{ index }}">
+      <text class="name">Name: {{ item.name }}</text>
+      <text class="action">{{ item.action }}</text>
+      <text class="timestamp">[{{ item.timestamp }}]</text>
+    </view>
+  </view>
 </view>

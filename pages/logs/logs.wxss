@@ -1,8 +1,36 @@
-.log-list {
+.clear{
+  width: 80%;
+  border-radius: 98rpx;
   display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  background-color: rgb(141, 137, 137);
+  color: white;
+  border-radius: 98rpx; 
 }
-.log-item {
-  margin: 10rpx;
+
+.clear::after {
+  background-color: rgb(90, 86, 86); 
 }
+
+.logs {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.btnImg{
+  height: 48rpx;
+  width: 48rpx;
+  margin-right: 20rpx;
+}
+
+.item {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 30rpx;
+  color: #888;
+}
+
