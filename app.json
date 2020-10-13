@@ -31,7 +31,7 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "logs",
+        "text": "Logs",
         "iconPath": "photos/history.png",
         "selectedIconPath": "photos/blueHistory.png"
       }
