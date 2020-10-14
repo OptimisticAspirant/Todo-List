@@ -8,7 +8,21 @@ Page({
     todos: [],
     leftCount: 0,
     allCompleted: false,
-    logs: []
+    logs: [],
+    imgUrls: [
+      '../../photos/01.png',
+      '../../photos/02.png',
+      '../../photos/03.png',
+      '../../photos/04.png',
+      '../../photos/05.png',
+      '../../photos/06.png',
+      '../../photos/07.png',
+      '../../photos/08.png',
+      '../../photos/09.png',
+      '../../photos/10.png',
+      '../../photos/11.png',
+      '../../photos/12.png',
+    ],
   },
 
   save: function () {

@@ -6,13 +6,19 @@ Page({
     toastHidden: true
   },
   onShow: function () {
+    this.getLogs()
+  },
+  set: function() {
+
+  },
+  getLogs: function(){
     var logs = wx.getStorageSync('todo_logs')
     if (logs) {
       this.setData({ logs: logs.reverse() })
     }
-  },
-  set: function() {
-
+    this.setData({
+      logs:logs
+    })
   },
   onLoad: function() {},
   switchModal: function() {
@@ -31,6 +37,6 @@ Page({
     this.setData({
       toastHidden: false
     })
-    this.onShow()
+    this.getLogs()
   }
 })

@@ -20,7 +20,13 @@
   </block>
   <block wx:else>
     <view class="empty">
-      <image class="allFinished" src="../../photos/01.png"/>
+      <swiper indicator-dots='true' indicator-color='gray' indicator-active-color='green' autoplay='true' interval='5000' duration='500'>
+        <block wx:for="{{imgUrl}}">
+          <swiper-item class="item_image">
+          <image src='{{imgUrl}}' class='swiper_image' mode="aspectFill"></image>
+          </swiper-item>
+        </block>
+      </swiper>
       <text class="title">Lalala~</text>
       <text class="content">There's no more work left.</text>
     </view>
