@@ -34,3 +34,31 @@
   color: #888;
 }
 
+.item:last-child {
+  border-bottom: 0;
+}
+
+.timestamp {
+  display: block;
+  margin-top: 20rpx;
+}
+
+.name {
+  display: inline-block;
+  width: 70%;
+  color: #363433;
+}
+
+.action {
+  display: inline-block;
+  width: 30%;
+  color: #393733;
+  text-align: right;
+}
+
+.img{
+  width: 200rpx;
+  height: 200rpx;
+  align-items: center;
+}
+

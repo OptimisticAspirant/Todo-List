@@ -16,9 +16,13 @@
   <toast hidden="{{toastHidden}}" bindchange="hideToast">Clear successfully！</toast>
   <view class="logs" wx:if="{{ logs.length }}">
     <view class="item" wx:for="{{ logs }}" wx:key="{{ index }}">
-      <text class="name">Name: {{ item.name }}\n</text>
-      <text class="action">{{ item.action }}: </text>
+      <text class="name">Name: {{ item.name }}</text>
+      <text class="action">{{ item.action }}</text>
       <text class="timestamp">{{ item.timestamp }}</text>
     </view>
+  </view>
+  <view class="nologs" wx:else>
+    <image class="img" src="../../photos/nologs.png"></image>
+    <text>No record now.</text>
   </view>
 </view>

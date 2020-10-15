@@ -1,28 +1,10 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
 Page({
   data: {
     input: '',
     todos: [],
     leftCount: 0,
     allCompleted: false,
-    logs: [],
-    imgUrls: [
-      '../../photos/01.png',
-      '../../photos/02.png',
-      '../../photos/03.png',
-      '../../photos/04.png',
-      '../../photos/05.png',
-      '../../photos/06.png',
-      '../../photos/07.png',
-      '../../photos/08.png',
-      '../../photos/09.png',
-      '../../photos/10.png',
-      '../../photos/11.png',
-      '../../photos/12.png',
-    ],
+    logs: []
   },
 
   save: function () {
@@ -56,7 +38,7 @@ Page({
     if (!this.data.input || !this.data.input.trim()) return
     var todos = this.data.todos
     todos.push({ name: this.data.input, completed: false })
-    var logs = this.data.logs
+    var logs = wx.getStorageSync('todo_logs')
     logs.push({ timestamp: new Date(), action: 'Add', name: this.data.input })
     this.setData({
       input: '',
@@ -71,7 +53,7 @@ Page({
     var index = e.currentTarget.dataset.index
     var todos = this.data.todos
     todos[index].completed = !todos[index].completed
-    var logs = this.data.logs
+    var logs = wx.getStorageSync('todo_logs')
     logs.push({
       timestamp: new Date(),
       action: todos[index].completed ? 'Finish' : 'Restart',
@@ -89,7 +71,7 @@ Page({
     var index = e.currentTarget.dataset.index
     var todos = this.data.todos
     var remove = todos.splice(index, 1)[0]
-    var logs = this.data.logs
+    var logs = wx.getStorageSync('todo_logs')
     logs.push({ timestamp: new Date(), action: 'Remove', name: remove.name })
     this.setData({
       todos: todos,
@@ -105,7 +87,7 @@ Page({
     for (var i = todos.length - 1; i >= 0; i--) {
       todos[i].completed = this.data.allCompleted
     }
-    var logs = this.data.logs
+    var logs = wx.getStorageSync('todo_logs')
     logs.push({
       timestamp: new Date(),
       action: this.data.allCompleted ? 'Finish' : 'Restart',
@@ -133,5 +115,5 @@ Page({
     })
     this.setData({ todos: remains, logs: logs })
     this.save()
-  }
+  },
 })

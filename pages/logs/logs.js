@@ -1,24 +1,27 @@
 //logs.js
 Page({
-  data:{
+  data: {
     logs: [],
     modalHidden: true,
     toastHidden: true
   },
-  onShow: function () {
+  onShow: function() {
     this.getLogs()
   },
   set: function() {
 
   },
-  getLogs: function(){
+  getLogs: function() {
     var logs = wx.getStorageSync('todo_logs')
     if (logs) {
-      this.setData({ logs: logs.reverse() })
+      this.setData({
+        logs: logs.reverse()
+      })
+    } else {
+      this.setData({
+        logs: logs
+      })
     }
-    this.setData({
-      logs:logs
-    })
   },
   onLoad: function() {},
   switchModal: function() {
@@ -32,10 +35,13 @@ Page({
     })
   },
   clearLog: function(e) {
-    wx.setStorageSync('logs', [])
+    wx.removeStorageSync('todo_logs')
+    wx.setStorageSync('todo_logs', [])
+    wx.removeStorageSync('app.globalData.todo_logs')
     this.switchModal()
     this.setData({
-      toastHidden: false
+      toastHidden: false,
+      logs:wx.getStorageSync('todo_logs')
     })
     this.getLogs()
   }
