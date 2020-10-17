@@ -19,7 +19,7 @@ Page({
   show: function () {
     var that=this;
     that.setData({flag: false });
-    countDown(that,25*60);
+    countDown(that,that.data.settime*60);
   },
 
   hide: function () {
