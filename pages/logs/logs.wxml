@@ -22,7 +22,7 @@
     </view>
   </view>
   <view class="nologs" wx:else>
-    <image class="img" src="../../photos/nologs.png"></image>
-    <text>No record now.</text>
+    <image class="noimg" src="../../photos/nologs.png"></image>
+    <text class="norecord">No record now.</text>
   </view>
 </view>

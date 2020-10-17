@@ -1,2 +1,14 @@
-<!--pages/tomatoClock/tomatoClock.wxml-->
-<text>pages/tomatoClock/tomatoClock.wxml</text>
+<view class="wrap">
+  <view class="btns">
+    <input class="input" type="number" placeholder="请输入设定的分钟" bindinput ="timeInput"/>
+    <button formType="submit" class="btn" hover-class='btn_on' bindtap='show' style="width:300rpx">开始计时</button>
+  </view>
+  <scroll-view scroll-y="true" style="height:100%;" class="modal-box" hidden="{{flag}}">
+    <view class="modal-body">
+      <view class="modal-content">
+        <button formType="submit" style="opacity: {{opacity}};background: #8b8b8b;color:#fff;" class="knowBtn"
+          hover-class='knowBtn_on' disabled="{{disabled}}" bindtap="hide">结束计时({{counttime}})</button>
+      </view>
+    </view>
+  </scroll-view>
+</view>
