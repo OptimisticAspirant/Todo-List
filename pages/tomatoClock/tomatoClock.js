@@ -25,38 +25,10 @@ Page({
   hide: function () {
     this.setData({
       flag: true,
-      disabled: true,
-      opacity: 0.7
+      disabled: false,
+      opacity: 0.7,
+      counttime:0
     })
-  },
-
-  onReady: function () {
-    
-  },
-
-  onShow: function () {
-    
-  },
-
-  onHide: function () {
-    
-  },
-
-  onUnload: function () {
-    
-  },
-
-  onPullDownRefresh: function () {
-    
-  },
-
-  onReachBottom: function () {
-    
-  },
- 
-
-  onShareAppMessage: function () {
-    
   }
 })
  
