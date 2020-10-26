@@ -7,7 +7,7 @@
     <view class="modal-body">
       <view class="modal-content">
         <button formType="submit" style="opacity: {{opacity}};background: #8b8b8b;color:#fff;" class="knowBtn"
-          hover-class='knowBtn_on' disabled="{{disabled}}" bindtap="hide">结束计时({{counttime}})</button>
+          hover-class='knowBtn_on' bindtap="hide">结束计时({{counttime}})</button>
       </view>
     </view>
   </scroll-view>
